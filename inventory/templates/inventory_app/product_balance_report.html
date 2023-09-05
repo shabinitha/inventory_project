@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Product Balance Report</title>
+    <style>
+        /* Apply basic styling to the table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        /* Style table headers */
+        th {
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 8px;
+        }
+
+        /* Style table data cells */
+        td {
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 8px;
+        }
+
+        /* Add some spacing to the header */
+        h1 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Product Balance Report</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Location</th>
+                {% for product in products %}
+                <th>{{ product.name }}</th>
+                {% endfor %}
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for location, product_balance_data in product_balances.items %}
+            <tr>
+                <td>{{ location }}</td>
+                {% for product, balance in product_balance_data.items %}
+                <td>{{ balance }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
