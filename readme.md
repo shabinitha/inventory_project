@@ -61,3 +61,5 @@ Follow these steps to set up and run the project locally:
 ## Project Structure
 
 The project follows a Django project structure with multiple apps for different functionalities. Ensure that you have defined models, views, and templates as needed for products, locations, product movements, and the product balance report.
+
+
