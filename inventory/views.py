@@ -81,7 +81,7 @@ def product_balance_report(request):
             productTotal[product_name] += product_balance
         
         product_balances[location_name]['Total']=total_balance
-        productTotal['Total'] =+ total_balance
+        productTotal['Total'] += total_balance
     product_balances['Total'] = productTotal
 
     context = {
